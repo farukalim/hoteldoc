@@ -29,17 +29,17 @@ public class MyConstants {
             "        \"type\": \"integer\"\n" +
             "      },\n" +
             "      \"brand\":{\n" +
-            "        \"type\": \"text\",\n" +
+            "        \"type\": \"keyword\",\n" +
             "        \"copy_to\": \"all\"\n" +
             "      },\n" +
             "      \"city\":{\n" +
-            "        \"type\": \"text\"\n" +
+            "        \"type\": \"keyword\"\n" +
             "      },\n" +
             "      \"starName\":{\n" +
-            "        \"type\": \"text\"\n" +
+            "        \"type\": \"keyword\"\n" +
             "      },\n" +
             "      \"business\":{\n" +
-            "        \"type\": \"text\",\n" +
+            "        \"type\": \"keyword\",\n" +
             "        \"copy_to\": \"all\"\n" +
             "      },\n" +
             "      \"location\":{\n" +
