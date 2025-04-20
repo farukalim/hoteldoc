@@ -15,6 +15,11 @@ import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
+import org.elasticsearch.search.aggregations.Aggregation;
+import org.elasticsearch.search.aggregations.AggregationBuilders;
+import org.elasticsearch.search.aggregations.Aggregations;
+import org.elasticsearch.search.aggregations.BucketOrder;
+import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
 import org.elasticsearch.search.sort.SortOrder;
@@ -25,6 +30,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.CollectionUtils;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -110,6 +116,22 @@ public class HotelSearchTest {
                 .highlighter(new HighlightBuilder().field("name").requireFieldMatch(false));
         SearchResponse search = client.search(searchRequest, RequestOptions.DEFAULT);
         handleResponse(search);
+    }
+
+    @Test
+    public void testAggregation() throws IOException {
+        SearchRequest searchRequest=new SearchRequest("hotel");
+        searchRequest.source().size(0);
+        searchRequest.source().aggregation(AggregationBuilders
+                .terms("brandAggs")
+                .field("brand")
+                .size(20)
+                .order(BucketOrder.count(true)));
+        SearchResponse search = client.search(searchRequest, RequestOptions.DEFAULT);
+        Aggregations aggregations = search.getAggregations();
+        Terms brandAggs = aggregations.get("brandAggs");
+        List<? extends Terms.Bucket> buckets = brandAggs.getBuckets();
+        buckets.forEach(bucket -> System.out.println(bucket.getKeyAsString()+"-->"+bucket.getDocCount()));
     }
 
     private void handleResponse(SearchResponse search) {
