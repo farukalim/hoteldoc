@@ -84,6 +84,16 @@ public class HotelDocumentTest {
         client.bulk(bulkRequest,RequestOptions.DEFAULT);
     }
 
+    @Test
+    public void testDeleteAll() throws IOException {
+        List<Hotel> list = service.list();
+        BulkRequest bulkRequest=new BulkRequest();
+        for (Hotel hotel : list) {
+            bulkRequest.add(new DeleteRequest("hotel").id(hotel.getId().toString()));
+        }
+        client.bulk(bulkRequest,RequestOptions.DEFAULT);
+    }
+
 
     @BeforeEach
     public void init() {

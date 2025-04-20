@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f4e88b0-4b64-494a-a825-64a5b5dbc4f9" name="Default Changelist" comment="测试ES基本功能">
+    <list default="true" id="9f4e88b0-4b64-494a-a825-64a5b5dbc4f9" name="Default Changelist" comment="测试ES聚合功能">
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/itcast/hotel/HotelServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/itcast/hotel/HotelSearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/itcast/hotel/HotelSearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/itcast/hotel/controller/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/itcast/hotel/controller/HotelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/itcast/hotel/pojo/HotelDoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/itcast/hotel/pojo/HotelDoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/itcast/hotel/service/IHotelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/itcast/hotel/service/IHotelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/itcast/hotel/service/impl/HotelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/itcast/hotel/service/impl/HotelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/itcast/hotel/HotelDocumentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/itcast/hotel/HotelDocumentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/itcast/hotel/service/IHotelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/itcast/hotel/service/IHotelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/itcast/hotel/service/impl/HotelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/itcast/hotel/service/impl/HotelService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev01" />
+        <entry key="$PROJECT_DIR$" value="dev02" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,7 +72,7 @@
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.HotelSearchTest.testAggregation">
+  <component name="RunManager" selected="JUnit.HotelDocumentTest.testBulkDocument">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -93,7 +100,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HotelSearchTest.boolTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HotelDocumentTest.testDeleteAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hotel-demo" />
       <extension name="coverage">
         <pattern>
@@ -102,8 +109,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.itcast.hotel" />
-      <option name="MAIN_CLASS_NAME" value="cn.itcast.hotel.HotelSearchTest" />
-      <option name="METHOD_NAME" value="boolTest" />
+      <option name="MAIN_CLASS_NAME" value="cn.itcast.hotel.HotelDocumentTest" />
+      <option name="METHOD_NAME" value="testDeleteAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,22 +132,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HotelSearchTest.sortAndPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hotel-demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.itcast.hotel.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.itcast.hotel" />
-      <option name="MAIN_CLASS_NAME" value="cn.itcast.hotel.HotelSearchTest" />
-      <option name="METHOD_NAME" value="sortAndPageTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="HotelSearchTest.testAggregation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hotel-demo" />
       <extension name="coverage">
@@ -157,6 +148,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HotelServiceTests.testContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hotel-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.itcast.hotel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.itcast.hotel" />
+      <option name="MAIN_CLASS_NAME" value="cn.itcast.hotel.HotelServiceTests" />
+      <option name="METHOD_NAME" value="testContent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HotelDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="hotel-demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.itcast.hotel.HotelDemoApplication" />
@@ -166,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HotelSearchTest.testAggregation" />
         <item itemvalue="JUnit.HotelDocumentTest.testBulkDocument" />
+        <item itemvalue="JUnit.HotelDocumentTest.testDeleteAll" />
+        <item itemvalue="JUnit.HotelServiceTests.testContent" />
+        <item itemvalue="JUnit.HotelSearchTest.testAggregation" />
         <item itemvalue="JUnit.HotelSearchTest.highlightTest" />
-        <item itemvalue="JUnit.HotelSearchTest.sortAndPageTest" />
-        <item itemvalue="JUnit.HotelSearchTest.boolTest" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +194,7 @@
       <workItem from="1744765918821" duration="37000" />
       <workItem from="1744852424039" duration="13358000" />
       <workItem from="1744875927329" duration="133000" />
-      <workItem from="1745108827118" duration="1004000" />
+      <workItem from="1745108827118" duration="7549000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1744701655902</created>
@@ -203,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1744876052692</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="测试ES聚合功能">
+      <created>1745112228325</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745112228325</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +250,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="测试" />
     <MESSAGE value="测试ES基本功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试ES基本功能" />
+    <MESSAGE value="测试ES聚合功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试ES聚合功能" />
   </component>
 </project>
